@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f1f5ef;
+  --foreground: #171717;
+  --primary: #a9b388;
+  --primary-dark: #5f6f52;
+}
+
+
+
+/* Overall App */
+body {
+  background-color: var(--background); /* Warm cream background */
+  color: var(--foreground); /* Dark text for good readability */
+}
+
+/* Recipe Cards */
+.recipe-card {
+  background-color: white; /* Clean white background for cards */
+  border: 1px solid var(--primary); /* Subtle sage green border */
+  box-shadow: 0 2px 4px rgba(95, 111, 82, 0.1); /* Subtle shadow using secondary color */
+}
+
+.recipe-card__title {
+  color: var(--secondary); /* Forest green for headings */
+  border-bottom: 2px solid var(--primary); /* Sage green underline */
+}
+
+.recipe-card__tag {
+  background-color: var(--primary); /* Sage green background */
+  color: white; /* White text */
+}
+
+.recipe-card__time,
+.recipe-card__servings {
+  color: var(--secondary); /* Forest green for metadata */
+}
+
+/* Interactive Elements */
+.recipe-card__button {
+  background-color: var(--secondary); /* Forest green */
+  color: white;
+}
+
+.recipe-card__button:hover {
+  background-color: var(--primary); /* Lighter sage green on hover */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.spinner-border {
+  border-top-color: transparent;
+  border-right-color: currentColor;
+  border-bottom-color: currentColor;
+  border-left-color: currentColor;
+  border-width: 0.2em;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
